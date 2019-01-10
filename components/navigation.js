@@ -1,11 +1,12 @@
 var html = require('choo/html')
-var format = require('../components/format')
-// var Component = require('choo/component')
+// var Component = require('choo/component') I did install this package
 
-module.exports = function navigation (navigation) {
+module.exports = navigation
+
+function navigation (navigation) {
     let { title, slug } = navigation
 
     return html`
-      <a href="${slug}">${title}</a><br />
+        <a href="${slug}">${title}</a><br />
     `
-  }
+}
