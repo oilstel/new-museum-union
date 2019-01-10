@@ -9,4 +9,4 @@ function navigation (navigation) {
     return html`
         <a href="${slug}">${title}</a><br />
     `
-}
+} 
