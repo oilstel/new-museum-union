@@ -1,14 +1,18 @@
 var css = require('sheetify')
 var choo = require('choo')
 var store = require('./stores/data')
+var storeNew = require('./stores/data')
 require('./design')
 
-// css('tachyons')
+const request = require("request")
+var url = "https://blur.website/cms/spad"
 
-// module.exports = {
-//   main: require('./views/main'),
-//   page: require('./views/page')
-// }
+request({ url: url, json: true }, 
+  function (error, response, body) {
+    if (!error && response.statusCode === 200) {
+      console.log(body.children);
+    }
+})
 
 
 var app = choo()
@@ -19,6 +23,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.use(store)
+app.use(storeNew)
+
 
 
 app.route('/', require('./views/home'))

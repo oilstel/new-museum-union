@@ -11,8 +11,8 @@ function page (state, emit) {
   return html`
     <body>
     <a href="/">Home</a><br />
-    ${state.pages.map(navigation)} : )
-    ${state.pages.map(page)}
+    ${state.pages}
+
     </body>
   `
 
