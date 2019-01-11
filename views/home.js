@@ -1,5 +1,5 @@
 var html = require('choo/html')
-var navigation = require('../components/navigation')
+// var navigation = require('../components/navigation')
 
 var TITLE = 'Home'
 
@@ -10,12 +10,18 @@ function home (state, emit) {
 
   console.log(state.href);
 
+
+
+
+
+
+
   return html`
     <body class="code lh-copy">
 
     <a href="/">Home</a><br />
-    
-    ${state.pages.map(navigation)}
+    <a href="page">page</a><br />
+
     </body>
   `
 
