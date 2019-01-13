@@ -11,7 +11,7 @@ function home (state, emit) {
   console.log(state.href);
 
 
-
+  // console.log('home',state.content.children);
 
 
 
