@@ -27,7 +27,7 @@ header {
     width: 100%;
 }
 
-header::after {
+/* header::after {
     width: 15px;
     height: 15px;
     background-color: blue;
@@ -37,10 +37,27 @@ header::after {
     position: absolute;
     top: 26px;
     left: 476px;
-}
+} */
 
 header a {
     color: #000;
+}
+
+header a span {
+    display: inline-block;
+    position: relative;
+}
+
+header a span::before {
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+    border-radius: 50%;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 66px;
 }
 
 h1, h2, p, li, hr { font-size: 20px; font-weight: normal; margin-bottom: 1em; }
@@ -226,7 +243,7 @@ section {
 
 /* Break points for header "blue dot" */
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
     header::after {
         left: 99px;
         top: 100px;
@@ -241,4 +258,4 @@ section {
         left: 99px;
         top: 175px;
     }
-}
+} */

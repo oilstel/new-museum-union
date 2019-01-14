@@ -66,7 +66,7 @@ function main (state, emit) {
     return html`
       <body>
         <header>
-          <a href="/">New Museum Union</a>
+          <a href="/">New Museum <span>Union</span></a>
       
         </header>
         <nav>
