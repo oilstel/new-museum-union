@@ -14,10 +14,13 @@
     "choo": "^6.13.1",
     "choo-component": "^0.2.2",
     "choo-service-worker": "^2.4.0",
+    "i": "^0.3.6",
     "markdown-it": "^8.4.2",
     "nanohtml": "^1.4.0",
     "nanorouter": "^3.1.1",
+    "npm": "^6.5.0",
     "sheetify": "^7.3.3",
+    "tachyons": "^4.11.1",
     "unfetch": "^4.0.1"
   },
   "devDependencies": {

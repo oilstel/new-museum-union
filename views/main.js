@@ -1,5 +1,6 @@
 var html = require('choo/html')
 var raw = require('nanohtml/raw')
+// var navigation = require('../components/navigation')
 var format = require('../components/format')
 
 module.exports = main
@@ -16,16 +17,16 @@ function main (state, emit) {
         if (page.uri === url_slug) { // If current page
           emit(state.events.DOMTITLECHANGE, page.title) // Update page title
 
-          var subpage_title = page.children.map((subpage) => {
+          var subpages = page.children.map((subpage) => {
             return html`
               <p>- <a href="/${subpage.uri}">${subpage.title}</a></p>
             `
-
           })
 
           return html`
-            <p>${raw(page.content.text)}</p>
-            <b>${subpage_title}</b>
+            <section>
+              ${format(page.content.text)}
+            </section>
           `
 
         }
@@ -37,7 +38,7 @@ function main (state, emit) {
             emit(state.events.DOMTITLECHANGE, subpage.title) // Update page title
 
             return html`
-              <p>${raw(subpage.content.text)}</p>
+              <section>${format(subpage.content.text)}</section>
             `
           }
         })
@@ -46,14 +47,17 @@ function main (state, emit) {
       var nav = pages.map((page) => { // Get the page nav
         if (page.uri === url_slug) {
           return html`
-            <p style="font-weight:bold;"><a href="/${page.uri}">${page.uri === url_slug ? page.title : ''}</a></p>
+            <a href="/${page.uri}" class="current">${page.uri === url_slug ? page.title : ''}</a>
           `
         } else {
           return html`
-            <p><a href="/${page.uri}">${page.uri === url_slug ? '' : page.title}</a></p>
+            <a href="/${page.uri}">${page.uri === url_slug ? '' : page.title}</a>
           `
         }
       })
+
+
+      
 
     } else {
       console.log('Content not loaded yet.')
@@ -61,12 +65,21 @@ function main (state, emit) {
 
     return html`
       <body>
+        <header>
+          <a href="/">
+            <svg id="New Mueseum Union" data-name="New Mueseum Union" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336.13 43.23" style="max-width:600px;"><defs><style>.cls-1{font-size:38px;font-family:TimesNewRomanPSMT, Times New Roman;}.cls-2{fill:blue;}</style></defs><title>title</title><text class="cls-1" transform="translate(0.51 31.58)">New Mueseum Union</text><circle class="cls-2" cx="292.95" cy="6.06" r="4"/></svg>
+          </a>
+        </header>
         <nav>
           ${nav}
         </nav>
 
-        ${page_content}
-        ${subpage_content}
+        <div class="content">
+          ${page_content}
+          ${subpage_content}
+        </div>
+
+        <div id="bug"></div>
       </body>
     `
 }

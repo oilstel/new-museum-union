@@ -1,12 +1,21 @@
 var html = require('choo/html')
-// var Component = require('choo/component') I did install this package
 
 module.exports = navigation
 
-function navigation (navigation) {
-    let { title, slug } = navigation
-
-    return html`
-        <a href="${slug}">${title}</a><br />
-    `
-} 
+function navigation() {
+    // if (state.content) {
+    //     console.log(state.content)
+    //     const pages = state.content.children // init data into pages const
+        var nav_content = pages.map((page) => { // Get the page nav
+            if (page.uri === url_slug) {
+            return html`
+                <p style="font-weight:bold;"><a href="/${page.uri}">${page.uri === url_slug ? page.title : ''}</a></p>
+            `
+            } else {
+            return html`
+                <p><a href="/${page.uri}">${page.uri === url_slug ? '' : page.title}</a></p>
+            `
+            }
+        })
+    // }
+}
