@@ -3,7 +3,7 @@ var choo = require('choo')
 var html = require('choo/html')
 var fetch = require('unfetch')
 var nav = require('./components/navigation')
-const api = 'https://blur.website/cms/spad'
+const api = 'https://newmuseumunion.org/cms/spad'
 // css('tachyons')
 require('./design')
 

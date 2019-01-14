@@ -66,12 +66,12 @@ function main (state, emit) {
     return html`
       <body>
         <header>
-          <a href="/">
-            <svg id="New Mueseum Union" data-name="New Mueseum Union" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336.13 43.23" style="max-width:600px;"><defs><style>.cls-1{font-size:38px;font-family:TimesNewRomanPSMT, Times New Roman;}.cls-2{fill:blue;}</style></defs><title>title</title><text class="cls-1" transform="translate(0.51 31.58)">New Mueseum Union</text><circle class="cls-2" cx="292.95" cy="6.06" r="4"/></svg>
-          </a>
+          <a href="/">New Museum Union</a>
+      
         </header>
         <nav>
           ${nav}
+          <a href="http://www.2110uaw.org/" target="_blank">Local 2110</a>
         </nav>
 
         <div class="content">

@@ -3,11 +3,8 @@
   "short_name": "new-museum-union",
   "description": "New Museum Union",
   "start_url": "/",
-  "display": "standalone",
-  "background_color": "#fff",
-  "theme_color": "#000",
   "icons": [{
-    "src": "/assets/icon.png",
+    "src": "/assets/favicon.png",
     "type": "image/png",
     "sizes": "512x512"
   }]
